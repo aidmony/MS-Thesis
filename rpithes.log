@@ -1,0 +1,619 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  14 MAY 2013 11:28
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**rpithes.tex
+(./rpithes.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
+ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
+rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
+kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
+ polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
+lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
+welsh, loaded.
+(./thesis.cls
+Document Class: thesis 2009/01/06 Rensselaer Polytechnic Institute
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+\c@firstchapter=\count88
+\numcomm=\count89
+\numcount=\count90
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2012/02/19 v3.2f Customizing captions (AR)
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2012/01/12 v1.4b caption3 kernel (AR)
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\captionmargin=\dimen103
+\captionmargin@=\dimen104
+\captionwidth=\dimen105
+\caption@indent=\dimen106
+\caption@parindent=\dimen107
+\caption@hangindent=\dimen108
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\vskip \abovecaptionski
+p \sbox \@tempboxa {\bfseries #1:~~#2}\ifdim \wd \@tempboxa >\hsize {\bfseries 
+#1:~~#2}\par \else \global \@minipagefalse \hb@xt@ \hsize {\hfil \box \@tempbox
+a \hfil }\fi \vskip \belowcaptionskip .
+\c@ContinuedFloat=\count91
+) (/usr/local/texlive/2012/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen109
+))
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen110
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count92
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count93
+\leftroot@=\count94
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count95
+\DOTSCASE@=\count96
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen111
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count97
+\c@MaxMatrixCols=\count98
+\dotsspace@=\muskip10
+\c@parentequation=\count99
+\dspbrk@lvl=\count100
+\tag@help=\toks16
+\row@=\count101
+\column@=\count102
+\maxfields@=\count103
+\andhelp@=\toks17
+\eqnshift@=\dimen112
+\alignsep@=\dimen113
+\tagshift@=\dimen114
+\tagwidth@=\dimen115
+\totwidth@=\dimen116
+\lineht@=\dimen117
+\@envbody=\toks18
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count104
+))
+\Gin@req@height=\dimen118
+\Gin@req@width=\dimen119
+)
+(./algorithm2e.sty
+Package: algorithm2e 2013/01/06 v5.00 algorithms environments
+\c@AlgoLine=\count105
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2011/09/21 ver 4.0
+
+Examine \normalsize starts \@setfontsize size may be \@xiipt. 
+Examine \small starts \@setfontsize size may be \@xipt. 
+Examine \footnotesize starts \@setfontsize size may be \@xpt. 
+Examine \large starts \@setfontsize size may be \@xivpt. 
+Examine \Large starts \@setfontsize size may be \@xviipt. 
+Examine \LARGE starts \@setfontsize size may be \@xxpt. 
+Examine \scriptsize starts \@setfontsize size may be \@viiipt. 
+Examine \tiny starts \@setfontsize size may be \@vipt. 
+Examine \huge starts \@setfontsize size may be \@xxvpt. 
+Examine \Huge starts \@setfontsize size may be \@xxvpt. )
+********************************************************
+Package `algorithm2e' Release 5.0 -- january 06 2013 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (cfiorio@um2.fr)
+********************************************************
+\skiptotal=\skip46
+\skiplinenumber=\skip47
+\skiprule=\skip48
+\skiphlne=\skip49
+\skiptext=\skip50
+\skiplength=\skip51
+\algomargin=\skip52
+\skipalgocfslide=\skip53
+\algowidth=\dimen120
+\inoutsize=\dimen121
+\inoutindent=\dimen122
+\interspacetitleruled=\dimen123
+\interspacealgoruled=\dimen124
+\interspacetitleboxruled=\dimen125
+\algocf@inoutbox=\box28
+\algocf@inputbox=\box29
+\AlCapSkip=\skip54
+\AlCapHSkip=\skip55
+\algoskipindent=\skip56
+\algocf@nlbox=\box30
+\algocf@hangingbox=\box31
+\algocf@untilbox=\box32
+\algocf@skipuntil=\skip57
+\algocf@capbox=\box33
+\algoheightruledefault=\skip58
+\algoheightrule=\skip59
+\algotitleheightruledefault=\skip60
+\algotitleheightrule=\skip61
+\c@algocfline=\count106
+\c@algocfproc=\count107
+\c@algocf=\count108
+\algocf@algoframe=\box34
+\algocf@algobox=\box35
+)
+\c@principle=\count109
+\c@definition=\count110
+\c@theorem=\count111
+\c@proposition=\count112
+\c@corollary=\count113
+ (./rpithes.aux (./rpititle-mas.aux) (./rpiack.aux) (./rpiabs.aux)
+(./rpichap1.aux) (./rpichap2.aux) (./rpichap3.aux) (./rpichap4.aux)
+(./rpichap5.aux
+
+LaTeX Warning: Label `sec:mathmodel' multiply defined.
+
+) (./rpichap6.aux) (./rpichap7.aux) (./rpiapp.aux))
+\openout1 = `rpithes.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+(/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count114
+\scratchdimen=\dimen126
+\scratchbox=\box36
+\nofMPsegments=\count115
+\nofMParguments=\count116
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count117
+\MPscratchDim=\dimen127
+\MPnumerator=\count118
+\makeMPintoPDFobject=\count119
+\everyMPtoPDFconversion=\toks21
+) (/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\openout2 = `rpititle-mas.aux'.
+
+
+(./rpititle-mas.tex [1
+
+
+{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 35.
+ (/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 35.
+
+[2] (./rpithes.toc
+LaTeX Font Info:    Try loading font information for U+msa on input line 1.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 1.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+))
+\tf@toc=\write3
+\openout3 = `rpithes.toc'.
+
+ [3
+
+
+]
+(./rpithes.lot)
+\tf@lot=\write4
+\openout4 = `rpithes.lot'.
+
+ [4
+
+] (./rpithes.lof
+Overfull \hbox (23.95448pt too wide) in paragraph at lines 2--2
+ [][] []\OT1/cmr/m/n/12 Partitioning of dis-tance do-main by bound-ary pa-ram-e
+-ters $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 b[]; b[]; b[]; b[]\OMS/cmsy/m/n/12 g$
+\OT1/cmr/m/n/12 : 
+ []
+
+)
+\tf@lof=\write5
+\openout5 = `rpithes.lof'.
+
+) [5
+
+]
+\openout2 = `rpiack.aux'.
+
+ (./rpiack.tex) [6
+
+
+
+]
+\openout2 = `rpiabs.aux'.
+
+ (./rpiabs.tex) [7
+
+
+
+]
+\openout2 = `rpichap1.aux'.
+
+ (./rpichap1.tex
+CHAPTER 1.
+<Figs/strongBalance_hor.pdf, id=33, 723.70375pt x 178.6675pt>
+File: Figs/strongBalance_hor.pdf Graphic file (type pdf)
+
+<use Figs/strongBalance_hor.pdf>
+Package pdftex.def Info: Figs/strongBalance_hor.pdf used on input line 13.
+(pdftex.def)             Requested size: 346.89621pt x 85.64218pt.
+ [1
+
+
+
+ <./Figs/strongBalance_hor.pdf>]
+Missing character: There is no Ò in font cmr12!
+Missing character: There is no Ó in font cmr12!
+ [2]
+[3] [4]) [5]
+\openout2 = `rpichap2.aux'.
+
+ (./rpichap2.tex
+CHAPTER 2.
+[6
+
+
+
+] [7] [8] [9] [10]) [11]
+\openout2 = `rpichap3.aux'.
+
+ (./rpichap3.tex
+CHAPTER 3.
+[12
+
+
+
+] [13] [14] [15] [16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 207--207
+[]$\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 B; C\OT1/cmr/m/n/12 )$'s tol-er-
+ []
+
+
+Overfull \hbox (14.31877pt too wide) in paragraph at lines 206--216
+[][]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--218
+[]$\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 B; C\OT1/cmr/m/n/12 )$'s tol-er-
+ []
+
+
+Overfull \hbox (14.31877pt too wide) in paragraph at lines 217--228
+[][]| 
+ []
+
+[18] [19] <Figs/mapping2.pdf, id=114, 715.67375pt x 116.435pt>
+File: Figs/mapping2.pdf Graphic file (type pdf)
+
+<use Figs/mapping2.pdf>
+Package pdftex.def Info: Figs/mapping2.pdf used on input line 343.
+(pdftex.def)             Requested size: 310.94427pt x 50.58878pt.
+ [20 <./Figs/mapping2.pdf>]) [21]
+\openout2 = `rpichap4.aux'.
+
+ (./rpichap4.tex
+CHAPTER 4.
+[22
+
+
+
+] [23] [24]
+
+Package amsmath Warning: Foreign command \over;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 132.
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 143--145
+
+ []
+
+<Figs/demo1.pdf, id=149, 999.735pt x 1299.85625pt>
+File: Figs/demo1.pdf Graphic file (type pdf)
+ <use Figs/demo1.pdf>
+Package pdftex.def Info: Figs/demo1.pdf used on input line 148.
+(pdftex.def)             Requested size: 305.70435pt x 397.48499pt.
+
+[26 <./Figs/demo1.pdf>]
+Overfull \hbox (20.1455pt too wide) detected at line 188
+\OML/cmm/m/it/12 X \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 ; H \OT1/cmr/m/n/12 = 
+[] \OML/cmm/m/it/12 ; C \OT1/cmr/m/n/12 = [] []
+ []
+
+[27]
+
+LaTeX Warning: Command \l invalid in math mode on input line 211.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--212
+
+ []
+
+[28] <Figs/demo2.pdf, id=196, 1121.18875pt x 889.3225pt>
+File: Figs/demo2.pdf Graphic file (type pdf)
+ <use Figs/demo2.pdf>
+Package pdftex.def Info: Figs/demo2.pdf used on input line 224.
+(pdftex.def)             Requested size: 455.55025pt x 361.34999pt.
+
+Overfull \hbox (29.1577pt too wide) in paragraph at lines 224--225
+ [][] 
+ []
+
+[29] <Figs/demo3.pdf, id=200, 1508.63625pt x 1298.8525pt>
+File: Figs/demo3.pdf Graphic file (type pdf)
+ <use Figs/demo3.pdf>
+Package pdftex.def Info: Figs/demo3.pdf used on input line 242.
+(pdftex.def)             Requested size: 419.69893pt x 361.34999pt.
+
+[30 <./Figs/demo2.pdf>] [31 <./Figs/demo3.pdf>] [32]) [33]
+\openout2 = `rpichap5.aux'.
+
+ (./rpichap5.tex
+CHAPTER 5.
+[34
+
+
+
+]
+Overfull \hbox (13.826pt too wide) in paragraph at lines 51--79
+[]\OT1/cmr/m/n/12 Our sec-ond ob-ser-va-tion is in-spired by the fa-mous small 
+world phe-nom-ena [[]],[[]].
+ []
+
+[35] [36] [37] [38]
+Missing character: There is no Õ in font cmr12!
+Missing character: There is no Õ in font cmr12!
+Missing character: There is no Õ in font cmr12!
+ [39]) [40]
+\openout2 = `rpichap6.aux'.
+
+ (./rpichap6.tex
+CHAPTER 6.
+[41
+
+
+
+] <Figs/ROC_curve.pdf, id=322, 1649.16125pt x 493.845pt>
+File: Figs/ROC_curve.pdf Graphic file (type pdf)
+
+<use Figs/ROC_curve.pdf>
+Package pdftex.def Info: Figs/ROC_curve.pdf used on input line 142.
+(pdftex.def)             Requested size: 434.40858pt x 130.08621pt.
+
+Overfull \hbox (8.01604pt too wide) in paragraph at lines 142--146
+ [][] 
+ []
+
+[42] [43] [44 <./Figs/ROC_curve.pdf>]
+<Figs/hist1.pdf, id=365, 1647.15375pt x 488.82625pt>
+File: Figs/hist1.pdf Graphic file (type pdf)
+ <use Figs/hist1.pdf>
+Package pdftex.def Info: Figs/hist1.pdf used on input line 201.
+(pdftex.def)             Requested size: 438.32841pt x 130.08621pt.
+
+Overfull \hbox (11.93587pt too wide) in paragraph at lines 201--205
+ [][] 
+ []
+
+[45 <./Figs/hist1.pdf>]) [46]
+\openout2 = `rpichap7.aux'.
+
+ (./rpichap7.tex
+CHAPTER 7.
+) [47
+
+
+
+] (./rpithes.bbl [48
+
+
+] [49]) [50]
+\openout2 = `rpiapp.aux'.
+
+ (./rpiapp.tex
+APPENDIX A.
+[51
+
+
+]) [52] [53] (./rpithes.aux (./rpititle-mas.aux) (./rpiack.aux)
+(./rpiabs.aux) (./rpichap1.aux) (./rpichap2.aux) (./rpichap3.aux)
+(./rpichap4.aux) (./rpichap5.aux) (./rpichap6.aux) (./rpichap7.aux)
+(./rpiapp.aux))
+
+LaTeX Warning: There were multiply-defined labels.
+
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 147 ({)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 5137 strings out of 493488
+ 73874 string characters out of 3141326
+ 157155 words of memory out of 3000000
+ 8291 multiletter control sequences out of 15000+200000
+ 11162 words of font info for 42 fonts, out of 3000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 38i,18n,38p,1610b,453s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.
+pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
+></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></
+usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
+r/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr
+/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on rpithes.pdf (60 pages, 1170172 bytes).
+PDF statistics:
+ 470 PDF objects out of 1000 (max. 8388607)
+ 319 compressed objects within 4 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,67 @@
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: rpithes.aux
+A level-1 auxiliary file: rpititle-mas.aux
+A level-1 auxiliary file: rpiack.aux
+A level-1 auxiliary file: rpiabs.aux
+A level-1 auxiliary file: rpichap1.aux
+A level-1 auxiliary file: rpichap2.aux
+A level-1 auxiliary file: rpichap3.aux
+A level-1 auxiliary file: rpichap4.aux
+A level-1 auxiliary file: rpichap5.aux
+A level-1 auxiliary file: rpichap6.aux
+A level-1 auxiliary file: rpichap7.aux
+The style file: IEEEtran.bst
+A level-1 auxiliary file: rpiapp.aux
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: rpireference.bib
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
+You've used 29 entries,
+            4039 wiz_defined-function locations,
+            1031 strings with 11458 characters,
+and the built_in function-call counts, 22111 in all, are:
+= -- 1795
+> -- 446
+< -- 216
++ -- 257
+- -- 64
+* -- 1032
+:= -- 3319
+add.period$ -- 61
+call.type$ -- 29
+change.case$ -- 29
+chr.to.int$ -- 516
+cite$ -- 29
+duplicate$ -- 1574
+empty$ -- 1812
+format.name$ -- 82
+if$ -- 5154
+int.to.chr$ -- 0
+int.to.str$ -- 29
+missing$ -- 240
+newline$ -- 110
+num.names$ -- 31
+pop$ -- 543
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 1722
+stack$ -- 0
+substring$ -- 1209
+swap$ -- 1301
+text.length$ -- 44
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 29
+warning$ -- 0
+while$ -- 102
+width$ -- 31
+write$ -- 297

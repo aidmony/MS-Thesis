@@ -1,0 +1,99 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%                                                                 %
+%                            ROOT FILE                            %
+%                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%
+%  Run LaTeX or pdfLaTeX on this file to produce your thesis.
+%  To produce the abstract title page followed by the abstract,
+%  see the file abstitle-phd.tex or abstitle-mas.tex.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[chap]{thesis}
+
+% Use the first command below if you want captions over 1 line indented. A side
+% effect of this is to remove the use of bold for captions (thesis default).
+% To restore bold, also include the second line below.
+\usepackage[hang]{caption}      % to indent subsequent lines of captions
+\usepackage{makeidx}
+\usepackage{amsmath}
+\usepackage{ amssymb }
+\usepackage{graphicx}
+\usepackage{algorithm2e}
+\newcommand{\tuple}[2] {\langle #1,#2\rangle}
+\renewcommand{\captionfont}{\bfseries} % bold caption (needed with caption 
+                                       % package to restore boldface.)
+\newtheorem{principle}{Principle}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+%\includeonly{rpichap1}  % use \includeonly to process only
+                         % the file(s) listed inside the braces                       
+\begin{document}
+ 
+\include{rpititle-mas}   % titlepage material for Master's thesis or project
+%\include{rpititle-phd}   % titlepage material for PhD thesis 
+\include{rpiack}
+\include{rpiabs}
+
+%1. The motivation of an extended balance theory with relations of strengths.
+%2. Address the balance tendency assumption. 
+%The possible applications of balance tendency (convergence), and the unsolved problems. 
+%3. Propose signed edge prediction as an application of social network convergence.
+%4. Outline the structure of the thesis
+
+\include{rpichap1}  
+
+%1. Review of Cartwright-Harary's structural balance theory.
+% Weak and Strong, global and local.
+%2. Review on social network balance tendency(convergence)
+%3. Review on signed edge prediction problems
+\include{rpichap2}
+% Charpter on Extended Balance Theory
+% 1. Consider the general case when relations have varying strengths.
+%     Review the arguments of balance/imbalance of a triad in terms of stress/tension
+%     Refine the arguments by the concept of tolerance, as well as two principles regarding it.
+%     Argue balance at a finer level is a matter of tolerance satisfaction.
+
+% 2. Discuss the measurement of relations with strengths
+% 2.1 Relations have signs and relative strengths, and hence inherit a total ordering. 
+%        Tolarence is defined in terms of <>
+% 	     Show Cartwright-harary's balance as an example of binary measurement. 
+%        Give table of tolerance rules and justify it w.r.t. two principles
+%        Show the balance theory corresponding to a five-category measurement of relations
+%		Give table of tolerance rules and justify it w.r.t. two principles
+
+% 2.2  Assume relations are well measured numerically. 
+% 		Propose a general tolerance rule, and corresponding balance definition 
+%		Show Cartwright-harary's balance and five-category are special cases under the general rule
+% 		The definition of a balanced social network. Alternatively, a network is balanced if it can be drawn in space
+\include{rpichap3}
+% Charpter on Convergence Model
+% 1. Motivations not restricted to a pure theoretical aspect, as it provides predictive attributes.
+%     1.1 List some of the famous predictive phenomenon
+% 2. Describe the intuition, and formulate the model in terms of a MDS problem
+%      2.1 Proofs/illustrations of phenomenons in 1.1
+\include{rpichap4}
+%Charpter on algorithms of stress majorization
+%     Reivew of SM
+% 1. SM in terms of sparse matrix
+% 2. An approximation algorithms
+\include{rpichap5}
+%Charpter on experiments
+% 1. Signed edge prediction by Golbeck
+%     FD vs SM
+\include{rpichap6}
+%Charpter of Conclusions
+\include{rpichap7}
+
+%\include{rpibib}
+
+
+\specialhead{REFERENCES}
+\bibliographystyle{IEEEtran}
+\bibliography{rpireference}
+
+\include{rpiapp}
+\end{document}

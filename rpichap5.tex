@@ -1,0 +1,162 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%                                                                 %
+%                            CHAPTER FIVE                          %
+%                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+ 
+
+
+
+\chapter{ALGORITHMS FOR STRESS MAJORIZATION} \label{sec:mathmodel}
+In this chapter, we review the problem of stress majorization in the MDS literature~\cite{Gansner:05}. Stress majorization is recognized as a principled technique in graph drawing~\cite{Leeuw:77}. Due to its complexity, however, classic stress majorization is applicable on graphs with limited size. Modern social networks usually consist of over $10^5$ nodes, which are typically infeasible for stress majorization. We discuss two algorithms that together give solution to our convergence model in the context of large social networks. 
+
+\section{Review of stress majorization}
+Following Gansner's description, we denote the d-dimensional location matrix as $X$~\cite{Gansner:05}. Let node $i$'s location be $X_{i}$. The MDS problem is to minimize the following stress function
+\begin{equation}\label{stress}
+stress(X)=\sum_{i<j} w_{ij} (||X_{i}-X_{j}|| - d_{ij})^{2}\,,
+\end{equation}
+where $w_{ij}$ are weights and $d_{ij}$ denote the ideal distance between $i$ and $j$. 
+There are many ways to minimize $stress(X)$. Among them, De Leeuw's stress majorization technique is considered to be a major achievement on the subject. The iterative majorization method at each step minimizes a simple convex function, which guarantees a monotonically convergent solution~\cite{Leeuw:77}. 
+In application, the majorization process involves solving the following equation iteratively. For a detailed analysis of Stress Majorization, please refer to Appendix A. 
+
+\begin{equation}\label{recursive}
+L^{w}X(t+1)=L^{X(t)}X(t),
+\end{equation}
+where $L^{w}$ and $L^{X(t)}$ are given by
+\[
+ L_{i,j}^{w}=\left\{ 
+  \begin{array}{l l}
+    -w_{ij} \quad & i \neq j\\
+    \sum_{k \neq i}w_{ik} \quad &i=j 
+  \end{array} \right. \text{,}\quad
+  L_{i,j}^{X(t)}=\left\{ 
+  \begin{array}{l l}
+    -w_{ij}d_{ij}/||X(t)_{i}-X(t)_{j}|| \quad & i \neq j\\
+    -\sum_{j \neq i}L_{i,j}^{X(t)} \quad &i=j 
+  \end{array} \right. \text{ .}\]
+
+At each iteration, $L^{w}$ is constant throughout the process, whereas matrix $L^{X(t)}$ needs to be computed recursively.
+While stress majorization is an effective and accurate optimization strategy, it is not feasible in very large networks. Solving Equation~\ref{recursive} in each iteration requires the computation of a fully dense matrix, which in total requires $O(n^3)$ time and $O(n^{2})$ space. For network of node number $> 10^{5}$, direct implementation of stress majorization becomes impossible.
+\section{Stress Majorization in Large Social Networks}
+We discuss two algorithms to solve the optimization given in Equation~\ref{stress} in large social networks. 
+
+{\bf Algorithm 1.} First, we note that social networks are usually sparse. In other words, there are a lot more ``no-links" than ``real links". If we set these neutral edge's weight $w_{O}$ to $0$, $L^{w}$ will be a sparse matrix. Moreover, the right side of the iteration, $L^{X(t)}X(t)$, can be expanded to the following:
+\begin{equation}\label{rightside}
+(L^{X(t)}X(t))_{i}= \sum_{j \neq i} w_{ij}d_{ij} \frac {X_{i}-X_{j}}{||X_{i}-X_{j}||} .
+\end{equation}
+Hence, we will only need to sum up the terms corresponding to ``real links" to get $L^{X(t)}X(t)$. Let the average degree of a social network be $k$, computing $L^{X(t)}X(t)$ only requires $O(kn)$. The cost to solve the linear equation~\ref{recursive} with sparse matrix $L^{w}$ is usually much less than $(2/3n^{3})$, depending on the patterns of $L^{w}$. As a result, the problem is likely to become feasible in large social networks.
+
+However, we cannot simply we set $w_{O}$ to $0$, because otherwise relationship changes regarding initially neutral relations would add zero relation cost. As a result, arbitrary changes over initially neutral relations would occur, and properties such as transitivity of positive relationships would not necessarily hold anymore. 
+
+Our second observation is inspired by the famous small world phenomena~\cite{Kleinberg:00},\cite{Watts:98}. If two people are somehow connected by a path of relations, the path is often of very short length. In the setting of online social networks, we regard two people who are connected by paths of more than length 4 distant from each other, and hence assume their relationship will remain neutral over the convergence. As a result, we only need to consider neighbors of each node within two links, which is in average $k^2$ in number. Under this constraint, computing $L^{X(t)}X(t)$ requires $O(k^{2}n)$ while $L^{w}$ is still sparse ($k^{2}$n non-zero entries). The convergence problem is solvable in large social networks while the principle of relation cost minimization is not violated. 
+\begin{algorithm}\label{alg1}
+\KwData{$G, w_{+}, w_{-}, w_{O}, \theta$}
+\KwResult{$X$ }
+Create a sparse matrix $L^{w}$\;
+\For{each node $i$ in $G$}{
+\For{each direct neighbor $j$ of node $i$}{
+\eIf{$(i,j)$ is a positive edge}{
+set $L^{w}_{ij}=w_{+}$\;
+}{
+set $L^{w}_{ij}=w_{-}$\;
+}
+}
+\For{each 2-step neighbor $k$ of node $i$}{
+set $L^{w}_{ij}=w_{O}$\;
+}
+}
+ Initialize $X^{'}$ as a random layout\;
+\Repeat{$(stress(X)-stress(X^{'}))/stress(X) < \theta$}{
+$X=X^{'}$\;
+compute $stress(X)$ by Equation~\ref{stress}\;
+compute $X^{'} = (L^{w})^{-1} L^{X}X$ following Equation~\ref{recursive} and Equation~\ref{rightside}\;
+compute  $stress(X^{'})$ by Equation~\ref{stress}\;
+}
+\Return X\;
+ \caption{Stress Majorization with sparse $L^{w}$}
+\end{algorithm}
+ {\bf Algorithm 2.} The second algorithm is inspired by Khoury's latest work. They first proposed the problem of drawing very large graphs by low-rank stress majorization \cite{Khoury:12}. Our algorithm is a refined version of their work, designed for applications in large social networks. In the setting of a social network, $X$ denotes the location matrix of the each node, and $w_{ij}$ and $d_{ij}$ are attributes regarding social links. Many social networks, such as the ones with signed edges (positive/negative), have limited type of edges. Hence, we assume that both $w_{ij}$ and $d_{ij}$ have finite values. Precisely, each $w_{ij}d_{ij}$ has finite values. For example, in a social network with signed edges, $w_{ij}$ and $d_{ij}$ should have only two values corresponding to a positive edge and a negative edge. In graph drawing, $w_{ij}d_{ij}=1$ is typically assumed \cite{Gansner:05}, \cite{Khoury:12} . We do not have such an assumption here. 
+
+The high complexity of stress majorization comes from computing Equation~\ref{recursive} iteratively. The computation can be divided into two parts. 1. Solve equation $L^{w}X(t+1)=b$, assuming $b=L^{X(t)}X(t)$ is given; 2. Compute $L^{X(t)}X(t)$ efficiently. 
+
+For the first sub-problem, Khoury first proposed a low-rank SVD based approximation approach. Inspired by the work by Drineas, they used a random sampling technique to approximate $L^{w}$ with only a small fraction of its columns \cite{Drineas:04}. Every matrix $M$ admits a SVD decomposition of the form $M=U \Sigma V^{T}$, where $U$ and $T$ are orthogonal matrixs. When the diagonal elements of $\Sigma$ are in non-increasing order, setting all but the first $k$ values of $\Sigma$ to zero yields a sequence of increasingly better approximation of $M$ as $k$ increases. If most values of $\Sigma$ are relatively close to zero, zeroing them does not change $M$ much. For matrix $L^{w}$, it satisfies equation $L^{w}=D^{w}+O^{w}$, where $O^{w}$ is an off-diagonal matrix with each element $O^{w}_{ij}=-wij$ and $D^{w}=- diag(O^{w} {\bf 1})$ is a diagonal matrix. Since matrix $D^{w}$ depends on $O^{w}$ and $O^{w}$ has better $k-rank$ approximation than original $L^{w}$, we approximate $O^{w}$ instead. Consequently, $L^{w}$ is represented by the following form
+\begin{equation}
+L^{w}=D^{w}+O^{w}=-diag(U\Sigma V^{T} {\bf 1}) + U\Sigma V^{T}.
+\end{equation} 
+Our next step is to approximate $O^{w}$ by the k most significant values of $\Sigma$. In other words, we will only need to store two $n \times k$ matricies and a $k \times k$ matrix. 
+
+Since $L^{w}$ is singular, $L^{w}X(t+1)=b$ is undetermined. We consider its minimum norm solution, $L^{w+}b$, where $L^{w+}$ is the Moore-Penrose Pseudo-inverse of $L^{w}$ \cite{Golub:96}. Since matrix $L^{w}$ is singular and that its null space is based by exactly ${\bf 1}$, we project $L^{w}$ out to circumvent the singularity.
+\begin{equation}
+L^{w+}=(L^{w} + {\bf {1}{1}^{T}})^{-1} - {\bf {1}{1}^{T}}
+\end{equation}
+\begin{equation}
+(L^{w} + {\bf {1}{1}^{T}})^{-1} = (U \Sigma V^{T} + D^{w} + {\bf {1}{1}^{T}})^{-1}
+\end{equation}
+Let $A=D^{w}+{\bf {1}{1}^{T}}$, and by the Woodbury Matrix Identity \cite{Hager:89},
+\begin{equation}
+(L^{w} + {\bf {1}{1}^{T}})^{-1} =(A+ U \Sigma V^{T})^{-1} = A^{-1} -A^{-1} U T_{1}^{-1} V^{T} A^{-1},
+\end{equation}
+where 
+\[
+A^{-1}=(D^{w})^{-1} - T_{2}T_{3}^{-1}T_{2}^{T},
+\]
+\[
+T_{1}=(\Sigma^{-1} + V^{T}A^{-1}U),
+\]
+\[
+T_{2}=(D^{w})^{-1}{\bf {1}},
+\]
+\[
+T_{3}=1+ \langle {\bf {1}}, T_{2} \rangle .
+\]
+Since $D^{w}$ can be written as $diag(U \Sigma V^{T} {\bf 1})$, the above computation only involves matrix $\Sigma$, $U$ and $V$. If only the k most significant values of $\Sigma$ is taken, $L^{w+}b$ can be efficiently computed. Specifically, the computational cost is $O(k^{3})$. The next question is how to accurately approximate the SVD of  $O^{w}$. 
+
+In~\cite{Drineas:04}, the authors propose a randomized algorithm to approximate the SVD of a matrix by only sampling $k$ columns of the matrix. In particular,  each column $M_{i}$ of a matrix $M$ is sampled with a probability of $p_{i}=||A_{i}||^{2}/||A||^{2}_{F}$. Each picked column is then scaled by a factor of $1/ \sqrt{k p_{i}}$, the obtained $n \times k$ matrix $\hat {M}$ is shown to approximate $M$ with good error bound. The computation of SVD of  such $\hat {M}$ requires $O(nk^{2})$ time.
+
+Given the assumption that $w_{ij}$ has limited number of values, we are able to compute the 2-norms without accessing every item of $L^{w}$. For example, in the social network with signed edges, for each node (column) $i$, its norm can be computed by counting the number of positive edges and negative edges it connects to, which takes $O(dn)$ where $d$ is the average degree. In many applications, we expect the average degree is much smaller than $n$. 
+
+In total, we can see the total running time of the first part algorithm is $O(k^{3}+nk^{2}+nd)$, where $k$ is a selected rank and $d$ is the average degree of the network.
+
+For the second sub-problem, the computation of $L^{X(t)}X(t)$ can be well approximated using Barnes-Hut algorithm of n-body problem with high efficiency~\cite{Barnes:86}. As it is in Equation~\ref{rightside}, $L^{X(t)}X(t)$ is a weighted sum of unit vector to $i$ from every other nodes. This can be treated as an n-body problem, where every weighted vector is the force every node $j$ puts on $i$. The brute force algorithm for such n-body problem requires $O(n^{2})$ computations in total. Barnes and Hut developed an algorithm to accurately solve the n-body problem in $O(n \log n)$ \cite{Barnes:86}. 
+
+The Barnes-Hut algorithm groups together bodies that are sufficiently nearby. It recursively divides the set of bodies into groups by storing them in a quad-tree. To calculate the net force on a particular body, we traverse the nodes of the tree, starting from the root. If the center-of-mass of an internal node is sufficiently far from the body, we approximate the bodies contained in that part of the tree as a single body, whose position is the groupÕs center of mass and whose mass is the groupÕs total mass. The algorithm is fast because we do not need to individually examine any of the bodies in the group. In graph drawing, the individual force of each member inside a distant group is the same. If the internal node is not sufficiently far from the body, we recursively traverse each of its subtrees. To determine if a node is sufficiently far away, we compute the quotient $s / d$, where s is the width of the region represented by the internal node, and d is the distance between the body and the nodeÕs center-of-mass. Then, we compare this ratio against a threshold value $\theta$. If $s / d < \theta$, then the internal node is sufficiently far away. By adjusting the $\theta$ parameter, we can change the speed and accuracy of the simulation. 
+
+Let the target body be $i$, and $J$ is a group far from $i$. We denote a super-node at the center of $J$ be $j$. The total force of $J$ on $i$ can be estimated by $|J|$ times the force from $j$ to $i$. In our setting when $w_{ij}d_{ij}$ has limited number of values, the individual force of each member in $J$ is not necessarily the same. However, $J$ can be partitioned into finite subgroups $J_{1}, J_{2}, ..., J_{P}$. For each subgroup, the same technique can be used to compute the overall force from each $J_{p}$ to $i$. The Barnes-Hut algorithm reduces the complexity of computing the net force on a particular body to $O(\log n)$. In our setting, it takes $O(P \log n)$ instead, where $P$ is the number of values of $w_{ij}d_{ij}$. In total, computing $L^{X(t)}X(t)$ takes $O(Pn\log n)$ in time.
+
+With the solutions to the two sub-problems, we are able to solve Equation~\ref{recursive} even on very large networks. The computational cost per iteration is in total $O(k^{3}+n(k^{2}+d)+Pn\log n)$, where $k$ is the selected rank, $d$ is the average degree of the network and $P$ is the number of types of edges of the network.
+\begin{algorithm}\label{solveA}
+{\bf Function solve$\_$$A^{-1}t(t, D^{w})$}\\
+\quad 	compute $T_{2}=(D^{w})^{-1}{\bf {1}}$\;
+ \quad	compute $T_{3}=1+ \langle {\bf {1}}, T_{2} \rangle $\;
+ \Return $A^{-1}(t)=(D^{w})^{-1}t - T_{2}T_{3}^{-1}T_{2}^{T}$t\;
+\end{algorithm}
+\begin{algorithm}\label{solveLwb}
+ {\bf Function solve$\_$$L^{w+}b(b, D^{w}, U, V^{T}, \Sigma)$}\\
+\quad compute $v_{1}=${\bf solve$\_$$A^{-1}t$}$(b, D^{w}) $\;
+\quad compute $A^{-1}U=${\bf solve$\_$$A^{-1}t$}$(U, D^{w}) $\;
+\quad compute $T_{1}=\Sigma^{-1} + V^{T}A^{-1}U$\;
+\quad compute $v_{2}=U(T_{1})^{-1}V^{T}v_{1}$\;
+\quad compute $v_{3}=${\bf solve$\_$$A^{-1}t$}$(v_{2}, D^{w}) $\;
+\Return $L^{w+}b=v_{1}-v_{3}$\;
+\end{algorithm}
+\begin{algorithm}\label{alg2}
+ \KwData{$G, w_{+}, w_{-}, w_{O}, \theta$, k}
+ \KwResult{$X$}
+  Approximate the SVD of $L^{w}$ by sampling $k$ columns of it following the method in~\cite{Drineas:04}\;
+  Compute and store the corresponding  $U, V^{T}, \Sigma$ and $D^{w}$\;
+ Initialize $X^{'}$ as a random layout\;
+\Repeat{$(stress(X)-stress(X^{'}))/stress(X) < \theta$}{
+$X=X^{'}$\;
+compute $stress(X)$ by Equation~\ref{stress}\;
+compute $L^{X}X$ through the Barnes-Hut algorithm\;
+approximate $X^{'} = $ {\bf solve$\_$$L^{w+}b(L^{X}X, D^{w}, U, V^{T}, \Sigma)$}\;
+compute  $stress(X^{'})$ by Equation~\ref{stress}\;
+}
+\Return X\;
+ \caption{Stress Majorization based on Approximated SVD}
+\end{algorithm}
+
+
+
+
+

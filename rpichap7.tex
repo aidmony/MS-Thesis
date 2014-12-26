@@ -1,0 +1,38 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%                                                                 %
+%                            CHAPTER SEVEN                          %
+%                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+ 
+\chapter{CONCLUSIONS AND FUTURE WORK}
+In this thesis, we introduced a general model for structural balance
+theory that can handle relation strengths and generalizes the
+classical balance theory. We showed that our notion of balance can be
+mapped to triangular inequality over metric distances and the issue of
+convergence can be modeled as the metric multidimensional scaling
+problem for which stress majorization provides exact solutions. We
+have shown that our theory can be used to effectively solve the edge
+sign prediction problem and its performance matches and exceeds state
+of the art for this problem. This is due to the fact that positive and
+negative edges are mapped to a continuous range of strengths based on
+the constraints provided by the other nodes. However, in contrast with
+previous work, our method is aware of global constraints based on
+balance which results in better results overall. Furthermore, the
+solutions provided by our method can also be used to solve the harder
+edge prediction problem.
+
+We are investigating various avenues of future work. Inspired by the
+work in~\cite{Khoury:12}, we have developed an approximation algorithm
+of stress majorization in the context of social networks. We would like to implement and test how well the approximation is. Furthermore, we are currently testing how the inclusion of relation
+strength improves performance by considering other actions of the
+users that imply the existence of a social tie. Our method also has
+applications to many related problems like clustering and link
+prediction, which we are currently investigating. We are studying the
+various properties of our theory in general networks and how it can be
+extended to an asymmetric interpretation of links.  We note that our
+method not only allows us to make predictions, but also study the
+characteristics existing networks and compare various
+characteristics. Example measures would be the ratio between positive
+and negative distances or between largest and smallest
+distances. These measures can help us develop new insights into the
+nature of adversarial relationships in different networks.

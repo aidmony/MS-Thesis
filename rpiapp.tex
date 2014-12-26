@@ -1,0 +1,67 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                 %
+%                            APPENDICES                           %
+%                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix % This command is used only once!
+%\addcontentsline{toc}{chapter}{APPENDICES} %toc entry or:
+\addtocontents{toc}{\parindent0pt\vskip12pt APPENDICES} %toc entry, no page #
+\chapter{}
+Follow Gansner's description, we denote the d-dimensional location matrix as $X$~\cite{Gansner:05}. Let node $i$'s location be $X_{i}$. The stress function in literature is defined as
+\begin{equation}\label{stress1}
+stress(X)=\sum_{i<j} w_{ij} (||X_{i}-X_{j}|| - d_{ij})^{2}\,,
+\end{equation}
+where $w_{ij}$ are weights and $d_{ij}$ denote the ideal distance between $i$ and $j$. The MDS is an optimization problem to minimize the total stress. Equation~\ref{stress1} can be decomposed and we have
+\begin{equation}\label{stress2}
+stress(X)=\sum_{i<j} w_{ij}d_{ij}^{2} + \sum_{i<j}w_{ij}||X_{i}-X_{j}||^{2}- 2\sum_{i<j}w_{ij}d_{ij}||X_{i}-X_{j}||.
+\end{equation}
+The first term of~\ref{stress2} is a constant. The second term, $\sum_{i<j}w_{ij}||X_{i}-X_{j}||^{2}$, is a quadratic sum, and hence can be written as
+\[ \sum_{i<j}w_{ij}||X_{i}-X_{j}||^{2} = Tr(X^{T}L^{w}X)\,, \]
+where $L^{w}$ is a weighted matrix, defined as
+\[
+  L_{i,j}^{w}=\left\{ 
+  \begin{array}{l l}
+    -w_{ij} \quad & i \neq j\\
+    \sum_{k \neq i}w_{ik} \quad &i=j 
+  \end{array} \right. \text{ .}
+\]
+The third term, $\sum_{i<j}w_{ij}d_{ij}||X_{i}-X_{j}||$, need extra attention. By Cauchy-Schwartz inequality, 
+\[
+||X_{i}-X_{j}|| ||Z_{i}-Z_{j}|| \geq (X_{i}-X_{j})^{T} (X_{i} - Z_{j})
+\]
+with the equality when $Z=X$. Hence, we have the following bound of the third term.
+\[
+\sum_{i<j}w_{ij}d_{ij}||X_{i}-X_{j}|| \geq \sum_{i<j}w_{ij}d_{ij} (X_{i}-X_{j})^{T} (X_{i} - Z_{j}) / ||Z_{i}-Z_{j}||.
+\]
+Equivalently, the right side of the inequality can be rewritten in the trace form.
+\[
+\sum_{i<j}w_{ij}d_{ij} (X_{i}-X_{j})^{T} (X_{i} - Z_{j}) / ||Z_{i}-Z_{j}||=Tr(X^{T}L^{Z}X),
+\]
+where $L^{Z}$ is defined as
+\[
+  L_{i,j}^{Z}=\left\{ 
+  \begin{array}{l l}
+    -w_{ij}d_{ij}/||Z_{i}-Z_{j}|| \quad & i \neq j\\
+    -\sum_{j \neq i}L_{i,j}^{Z} \quad &i=j 
+  \end{array} \right. \text{ .}
+\]
+From the above all, we can bound the stress function confidently by function $F^{Z}(X)$, defined as
+\begin{equation}
+F^{Z}(X)=\sum_{i<j}w_{ij}d_{ij}^{2}+Tr(X^{T}L^{w}X)-2Tr(X^{T}L^{Z}Z)
+\end{equation}
+with equality when $Z=X$.
+Notice $^{Z}(X)$ is of quadratic form, and we can easily find its minima by differentiate it by X and solve
+\[
+L^{w}X=L^{Z}Z.
+\]
+This leads to the following iterative optimization process. Given the location matrix at time $t$, $X(t)$, we want to compute $X(t+1)$ so that $stress(X(t+1)) < stress(X(t))$. We take $X(t+1)$ as the minimizer of $F^{X(t)}(X)$ by solving the above equation iteratively. At this point, if $X(t+1)=X(t)$, the process is terminated. Otherwise, we get
+\[
+stress(X(t+1)) \leq F^{X(t)}(X(t+1)) < F^{x(t)}(X(t)) =stress(X(t)).
+\]
+To summarize, the majorization process involves solving the following equation iteratively
+\begin{equation}
+L^{w}X(t+1)=L^{X(t)}X(t),
+\end{equation}
+where $L^{w}$ is constant throughout the process, whereas matrix $L^{X(t)}$ need to be computed at each iteration.
+While stress majorization is an effective and accurate optimization strategy, it is not feasible in very large networks. Solving (14) in each iteration requires the computation of a fully dense matrix, which in total requires $O(n^3)$ time and $O(n^{2})$ space. For network of node number $> 10^{5}$, direct implementation of stress majorization becomes impossible.

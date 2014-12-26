@@ -1,0 +1,27 @@
+\contentsline {chapter}{LIST OF TABLES}{iv}
+\contentsline {chapter}{LIST OF FIGURES}{v}
+\contentsline {chapter}{ACKNOWLEDGMENT}{vi}
+\contentsline {chapter}{ABSTRACT}{vii}
+\contentsline {chapter}{\numberline {1.}INTRODUCTION}{1}
+\contentsline {chapter}{\numberline {2.}BACKGROUND AND RELATED WORK}{6}
+\contentsline {section}{\numberline {2.1}Strong and Weak Structural Balance Theory}{6}
+\contentsline {section}{\numberline {2.2}Social Network Convergence}{8}
+\contentsline {section}{\numberline {2.3}Edge Sign Prediction}{9}
+\contentsline {chapter}{\numberline {3.}EXTENDED BALANCE THEORY}{12}
+\contentsline {section}{\numberline {3.1}Tolerance and Two Principles}{13}
+\contentsline {section}{\numberline {3.2}Measuring Relationships by Total Ordering}{15}
+\contentsline {section}{\numberline {3.3}Relation Distance and General Expression of Balance}{19}
+\contentsline {chapter}{\numberline {4.}CONVERGENCE MODEL}{22}
+\contentsline {section}{\numberline {4.1}Convergence Model}{22}
+\contentsline {section}{\numberline {4.2}Predictability of Convergence Model}{24}
+\contentsline {chapter}{\numberline {5.}ALGORITHMS FOR STRESS MAJORIZATION}{34}
+\contentsline {section}{\numberline {5.1}Review of stress majorization}{34}
+\contentsline {section}{\numberline {5.2}Stress Majorization in Large Social Networks}{35}
+\contentsline {chapter}{\numberline {6.}EXPERIMENTS AND RESULTS}{41}
+\contentsline {section}{\numberline {6.1}Data and Algorithm}{42}
+\contentsline {section}{\numberline {6.2}Results}{43}
+\contentsline {section}{\numberline {6.3}General Edge Prediction}{44}
+\contentsline {chapter}{\numberline {7.}CONCLUSIONS AND FUTURE WORK}{47}
+\contentsline {chapter}{REFERENCES}{48}
+\parindent 0pt\vskip 12pt APPENDICES
+\contentsline {chapter}{\numberline {A.}}{51}

@@ -1,0 +1,149 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%                                                                 %
+%                            CHAPTER TWO                          %
+%                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+ 
+\chapter{BACKGROUND AND RELATED WORK}
+\section{Strong and Weak Structural Balance Theory}
+The concept of structural balance is based on theories in social psychology
+dating back to the work of Heider~\cite{Heider:46}, and generalized and formulated by Cartwright and Harary~\cite{Cartwright:56},\cite{Davis:63},\cite{Harary:53}. When modeling relationships between pairs of individuals, positive
+relationships are representative of liking, loving, valuing or
+approving someone, and negative relationships are representative of
+disvaluing, disapproving or negatively valuing
+someone~\cite{Cartwright:56}. Structural balance theory considers social networks with binary relationships, and argues that certain configurations of a triadic relationship are socially and psychologically more plausible than others. see Figure~\ref{fig:balance_strong}.
+\begin{itemize}
+\item Given three people Alice, Bob and Chris, it is natural for them to be mutual friends of each other (triad (1) in\ref{fig:balance_strong})).
+\item Similarly, a relation in which two friends, Alice and Bob have
+a common enemy Chris, is also natural (triad (2) in
+Figure~\ref{fig:balance_strong}).
+\item The other two configurations of triangles introduce psychological stress or tension into relationships. It is ``stressfull" for Alice and Bob, and Bob
+and Chris to be friends, but Alice and Chris to be enemies (triad
+(4) in Figure~\ref{fig:balance_strong}). Such stress is a kind of implicit force that will either push Alice and Chris to become friends, or else force Bob to side with one of Alice and Chris~\cite{kleinberg-book}.  
+\item Similarly, there is stress that motivates two of the three people to ``team up" against the third one in the situation when Alice, Bob and Chris are mutual enemies against each other (triad
+(3) in Figure~\ref{fig:balance_strong})~\cite{kleinberg-book}.
+\end{itemize}
+In~\cite{Cartwright:56}, triads (1) (2) in Figure~\ref{fig:balance_strong} are referred as balanced while triads (3) (4) in Figure~\ref{fig:balance_strong} are referred as imbalanced, which is referred as the Strong Balance Theory (SBT) in~\cite{kleinberg-book}. It is argued people tend to reduce the psychological dissonance resulting from imbalanced triads. Hence, balance theorists argue that in real social networks, imbalanced triads are unstable and subject to changes towards balanced structure.
+
+In a complete network, all pairs of people are connected to each other by positive or negative links. We call it a balanced network if all triads in it are of balanced structures, i.e., all triads are of the form (1), or (2) from Figure~\ref{fig:balance_strong}. Cartwright and Harary also discuss the global structure of a balanced complete network~\cite{Cartwright:56}. 
+\begin{theorem}\label{structure theorem}
+If a labeled complete graph is balanced, then either all pairs
+of nodes are friends, or else the nodes can be divided into two groups, X and Y ,
+such that every pair of nodes in X like each other, every pair of nodes in Y like
+each other, and everyone in X is the enemy of everyone in Y.
+\end{theorem}
+Examples of SBT and Theorem~\ref{structure theorem} has been illustrated with some anecdotal examples from international relations. For example, the United States surprisingly supported Pakistan in 1972. At that time, U.S. was trying to improve relations with China while China and Pakistan was close because of their common enemy India and USSR. We see a relatively clear dichotomy of these countries.
+
+James Davis argues that the latent stress of the two imbalanced triads (triads (3) (4) in Figure~\ref{fig:balance_strong}) in Cartwright-Harary's theory is fundamentally different~\cite{Davis:67}. In (4), we have the {\bf stress source} of a person whose two friends do not get along; in (3), there is the {\bf possibility} that two of the nodes will ally themselves against the third.
+Davis points out that in many settings, the imbalanced factors in (4) may
+be significantly stronger than it is in (3)~\cite{Davis:67}. More often, we see two people with a common friend try to reconcile their differences (triad (4) in Figure~\ref{fig:balance_strong}), while there is weaker motivation that leads two of three mutual enemies to become ally. The balance theory that only considers triad (4) in Figure~\ref{fig:balance_strong} as imbalanced is referred to the Weak Structural Balance Theory (WSBT). 
+
+Just like SBT, WSBT enjoys a similar global structural property. Namely, if a complete network is weakly balanced, then it can be partitioned into multiple groups such that nodes within the same group are mutual friends, and nodes belonging to different groups are enemies~\cite{Davis:67}.  
+
+\section{Social Network Convergence}
+The concept of ``evolution of social networks" is not new. Researchers have used longitudinal data to model such evolution. Leinhardt~\cite{Leinhardt:77a}, Wasserman~\cite{Wasserman:80}, Leenders~\cite{Leenders:95} and Snijders~\cite{Snijders:01} have  proposed to use continuous-time Markov chains as a model for evolution of social networks. Particularly in~\cite{Snijders:01}, the network evolution is modeled as the consequence of the actors making new choices, or withdrawing existing choices, on the basis of functions of utility, with fixed and random components, that the actors try to maximize. The change in the network is modeled as the stochastic result of the network effects.
+
+Doreian suggests that social networks change through the operation of coherent social processes~\cite{Doreian:02}.
+One coherent theory of such ``evolution process" is the balance theory, as imbalanced structures in a network are unstable and subject to change. However, as Doreian points out, the ``network evolution" is influenced both by the balance process and individual characteristics~\cite{Doreian:02}. On the one side, balance process regulates the mutual influence over relationships at a structural level; certain structures (triads) will be forced to change due to the latent social and psychological stress. On the other side, relationships are changed following the interests or characteristics of the individuals in a relationship. For example, one may establish positive relationship with someone who provide valuable information, or build negative relationship with someone who have conflicted interests. Take both evolution factors into account, the evolution of a social network qualifies as an autonomous system in which balance and individual interests coexist. Due to the unpredictability and complexity of individual acts, it is unlikely to model the evolution process by a concise and unified theory. Hence, we only discuss the balance aspect of the network evolution in this thesis. Since the stress within imbalanced structures always pushes the network towards balanced states, every social network has a tendency towards balance. Regardless of other factors, the balance evolution of a social network would converge at one point when the balance is reached.  We therefore call the balance aspect of the evolution as {\bf social network convergence}. 
+
+The convergence of social network has not drawn much attention under the framework of binary relationships. With the extended balance theory, however, the problem becomes interesting and rather complicated, as changes in relationship can be numerical. 
+\section{Edge Sign Prediction}
+The {\it edge sign prediction} problem is studied as an application, as well as a justification, of SBT theory. Namely, suppose we are given a social network with positive or negative edges, but a
+small fraction of the edge signs are ``hidden''. How can we predict
+the signs of hidden edges with the information provided by the rest of network?
+
+Guha et. al.~\cite{Guha:04} introduce one of the earliest methods that
+addresses the propagation of both trust and distrust. To solve this problem, they propose the
+concepts called direct propagation, co-citation and backwards propagation,
+and compute trust propagation by repeating matrix operations that
+combine the three types of propagations. They report an overall $85\%$
+prediction accuracy over data samples from Epinions that has equal
+number of positive and negative edges.
+
+Leskovec, Huttenlocher and Kleinberg~\cite{Leskovec:2010} first formulate the {\it edge sign prediction} problem. They conduct a series of experiments on three large datasets: Epinion, Slashdot and
+Wikipedia based on a machine learning framework. In particular, they collect two classes of features, one of
+which is based on degree and the other is based on triads. These
+relatively local features form a high dimensional space on which they
+perform standard machine learning methods and perform edge sign
+predictions. Closely related to our work, they also interpret some of
+their results in terms of Cartwright-Harary's balance
+theory~\cite{Cartwright:56}, but unlike our work, they do not use
+balance theory as a starting point of their approach.
+
+The recent work by DuBois et. al.~\cite{golbeck:distrust2011} is also
+related to this thesis from an algorithmic point of view. This work
+stands out as it provides very good prediction performance for the
+edge sign prediction problem: $80-90 \%$ accuracy on all of the three datasets
+used in~\cite{Leskovec:2010} for both positive and negative edges. In
+this paper, the authors map trust and distrust relationships to metric
+distances: the larger the distance is, the more negative (less
+positive) the relation is. The proposed method computes two
+features for each signed edge: the first one is based on path
+probability (PP, $O(n^2)$)~\cite{DuBois:2009} and the second one uses
+a force directed algorithm (FD, $O(kn)$ at each iteration where $k$ is
+the average degree of the network)~\cite{golbeck:distrust2011}. 
+
+In this thesis, we show that some of the assumptions underlying this
+algorithm can be formally defined as part of a general structural
+balance theory that not only works for simple positive and negative
+edges, but also takes into account relation strength when
+applicable. Being able to deal with strength also enables us to state
+the explicit optimization criteria in the metric space for the graph
+drawing problem. As a result, we are able to compare the prediction
+performance with respect to an optimal placement of nodes according to
+our theory.
+
+Notice that both the force directed algorithm (FD) and stress
+majorization (SM) that we use in this thesis have been used in the
+field of graph drawing~\cite{Gansner:05}. In FD, an attractive force
+is assigned between endpoints of each positive edge and a repelling
+force is assigned between endpoints of each negative edge. Nodes are
+initially randomly laid out, and the system is simulated until a
+stable equilibrium is reached when the total kinetic energy is below
+certain threshold. The relation between every pair of nodes is
+represented by the distance between the two end nodes in the stable
+layout of the network.
+
+While FD is simple to implement, it operates on a local pairwise
+level, instead of a global level. This can lead to problems if the
+local forces end up not being sufficient to hold small groups
+together. Alternatively, if negative forces are too high, then the
+network may continuously expand in space and the algorithm may never
+converge. As a result, such a method requires carefully tuned
+parameters for a specific network to work well.  In contrast, SM is a
+mature approach that guarantees monotonic convergence for drawing
+graphs. Moreover, in~\cite{golbeck:distrust2011}, there is no force
+between pairs of unconnected nodes which can result in unintuitive
+distances for such pairs. In fact as we show in our results, the FD
+method maps unconnected nodes to a predominantly positive range. This
+presents a problem for using this algorithm for solving the harder
+{\it link prediction problem}~\cite{Kleinberg:03}, which predicts the presence of a positive relationship between two arbitrary nodes. Link prediction is a harder problem since networks are often sparse and one needs to find
+the few edges that are true positive or negative links with high
+probability. We show that our results are very promising on this
+front.
+
+In addition, to the best of our knowledge, none the existing methods
+provide a way to study the principles underlying positive and
+negative relationships in very large networks with varying degrees of
+relationship strengths. It is unclear to which degree SBT or WSBT
+balance theory is valid for many large networks in which some or most
+relationships are simple acquaintances~\cite{Granovetter:1973} instead
+close friendship relationships. An acquaintance may not result in the
+same type of structural constraints. For example, if Alice knows Bob,
+and Bob knows Chris, but Charlie dislikes Alice, this may not cause
+much stress in the existing relationships if Alice, Bob and Chris
+rarely spend time with each other, i.e. their relationship is not
+strong. However, there are still some implications for the network
+overall when we consider acquaintances as well as friendships. We
+examine those in the next chapters and provide a flexible theory of
+balance that generalizes WSBT. We show that our theory allows us to
+formulate convergence as an optimization problem, which can be solved
+by stress majorization and illustrate that our algorithm achieves
+better performance than those cited in the
+literature~\cite{golbeck:distrust2011} while also providing a
+principled way to approach the {\it edge sign prediction} problem.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
